@@ -37,7 +37,7 @@ const variableName = "tutaj zawartość";
 */
 // Przykład nazw samokomentujących, gdzie komentarz jest zbędny
 const userID = 1023; //identyfkator użytkownika
-function upadeteScore() {} //jeśli funkcja ma aktualziować wynik
+function updateScore() {} //jeśli funkcja ma aktualziować wynik
 let lastLogin = "11.09.2018" //data ostatniego logowania
 function addUserToCourse() {} //funkcja, która dodaje użytkownika do kurs
 
