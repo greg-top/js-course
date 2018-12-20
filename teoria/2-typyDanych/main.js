@@ -52,6 +52,7 @@ typeof Symbol();
 typeof {};
 typeof [];
 typeof
+
 function () {};
 
 
@@ -59,7 +60,7 @@ function () {};
 let primitiveType1 = 20;
 let primitiveType2 = primitiveType1; //Tworzona jest kopia, wartość identyczna, ale nie ta sama (jest to idealna kopi wartość, ale stanowiaca już osobną wartość)
 
-//W wyniku tych dwóch instrukcji powyżej powstają dwie zmienne które mają warrości 20. Są to dwie wartości 20 (a nie jedna ta sama przypisana do obu zmiennych)
+//W wyniku tych dwóch instrukcji powyżej powstają dwie zmienne które mają wartości 20. Są to dwie wartości 20 (a nie jedna ta sama przypisana do obu zmiennych)
 
 primitiveType1 = 30;
 console.log(primitiveType2);
@@ -75,4 +76,4 @@ referenceValue1[3] = 4;
 referenceValue2[4] = 10;
 
 // console.log(referenceValue2);
-//Obiekt nie została skopiowany, a został przypisany jedynie link do miejsca w pamięci, w którym się znajduje.
+//Obiekt nie został  skopiowany, a został przypisany jedynie link do miejsca w pamięci, w którym się znajduje.
