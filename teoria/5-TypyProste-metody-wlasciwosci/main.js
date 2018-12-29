@@ -27,7 +27,7 @@ txt[2]; //pobranie znaku, kótry znajduje się pod danym indeksem
 
 txt.toUpperCase; //zwraca funkcje (czyli bez wywowałania kieruje do funkcji (metodą określamy funkcję, która jest przypisana do obiektu - oczywiście będziemy o tym jeszcze rozmawiać)
 txt.toUpperCase(); //wywołanie metody dla string
-score.toFixed(); //wywołanie metody dla number (typy nie mają tych samych metod, tylkjo różne)
+score.toFixed(); //wywołanie metody dla number (typy nie mają tych samych metod, tylko różne)
 txt.indexOf('ś'); //metoda sprawdzająca czy w danym stringu jest wskazany znak, a jeśli tak to na jakiej pozycji (o jakim indeksie, licząć od zera)
 
 // Metody nie przerabiają startych wartości a zwracają nowe (stare zostają niezmienione) Dlatego te nowe wartości gdzieś powinniśmy przypisać, jeśli chcemy z nich skorzystać w dalszej części programu.
@@ -44,11 +44,11 @@ name.length; //właściwość której nie ma w typie prostym, i teraz zaczyna pr
 //nameTemporary.length
 // 3 - Zwraca 5 (bo taką ma długość "Janek") i usuwa obiekt String (w przykładzie znajduje się w nameTemporary)
 
-/* Reasumując: Jeżeli wywołujemy metody, czy chcemy dostać sie do zawartości własciwości, to w tle tworzony jest tymaczowy obiekt danego typu, który "opakowuje" nasz typ prosty na czas dotarcia do właściwości czy wywowłania metody.*/
+/* Reasumując: Jeżeli wywołujemy metody, czy chcemy dostać sie do zawartości własciwości, to w tle tworzony jest tymaczowy obiekt danego typu, który "opakowuje" nasz typ prosty na czas dotarcia do właściwości czy wywołania metody.*/
 
-// Możemy też tworzyć takie obiekty sami (abstachując już od opakowania typów prostych). Ale bardzo rzadko ma to sens, ponieważ takie obiekty mają częstoi inne zachowania niż typy proste np. każdy obiekt zwraca np. true, a operator typeof zwróci "object", a nie rodzaj typu prostego. problemy pojawią się także przy operatorze porównania "==="). Tworzenie obektu (String, Number, Boolean) jest trudniejsze niż prosty literał.
+// Możemy też tworzyć takie obiekty sami (abstrachując już od opakowania typów prostych). Ale bardzo rzadko ma to sens, ponieważ takie obiekty mają często inne zachowania niż typy proste np. każdy obiekt zwraca np. true, a operator typeof zwróci "object", a nie rodzaj typu prostego. problemy pojawią się także przy operatorze porównania "==="). Tworzenie obektu (String, Number, Boolean) jest trudniejsze niż prosty literał.
 const userName = new String("Jagienka");
 const userID = new Number(2);
-const famale = new Boolean(true);
+const female = new Boolean(true);
 
 //Na przyszłość: String, Number i Boolean to przykłady konstrukturów czyli funkcji, które są używane do tworzenie instancji (niezależnej kopii) obiektów. Operator "new" tworzy nowy obiekt. Na tym etapie nie masz jeszcze szans tego zrozumieć, to zaawasnowany koncept programowania w JS, ale kiedy dojdziemy do programowania obiektowego będę to dobrze wyjaśniał i zrozumiesz ten mechanizm.
