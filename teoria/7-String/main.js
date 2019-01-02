@@ -89,9 +89,6 @@ const repeatString = "word".repeat(5);
 const slideWord = userName.slice(1, 2); //od drugiego znaku (bo mamy indeks 1) do trzeciego znaku (ale bez niego). Czyli zwróci nam tylko drugi znak
 
 
-
-
-
 // konkretna litera zwrócona
 const character = "litery".charAt(2) //zwraca literę (liczone od 0)
 
