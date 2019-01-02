@@ -56,7 +56,7 @@ let beerPrice = 11;
 
 1 && 0;
 /*
-1- Sprawdza lewą stronę, dokonując konwersji wartości (wyrażenia) na typ boolean. Jeśli jest true to sprawdza drugą stronę, jeśli nie to zwraca tę wartość. np. "" && 1 - kończy działanie po pierwszym i zwraca "" (psty string) 
+1- Sprawdza lewą stronę, dokonując konwersji wartości (wyrażenia) na typ boolean. Jeśli jest true to sprawdza drugą stronę, jeśli nie to zwraca tę wartość. np. "" && 1 - kończy działanie po pierwszym i zwraca "" (pusty string) 
 
 2 - Po przejściu do prawej strony sprawdza ją i zwraca ją.
 
@@ -77,7 +77,7 @@ Boolean(userConnections || userExperience)
 
 1 || 0;
 /*
-1- Sprawdza lewą stronę, dokonując konwersji wartości (wyrażenia) na typ boolean. Jeśli jest true to NIE SPRAWDZA już drugiej strony i zwraca wartość, którą sprawdzał (tak byłoby w przykładzie 1 || 0). Warunek na tym etapie jest już rpawdziwy. Jeśli jest false, to przechodzi do sprawdzenie argumentu z prawej strony np. "" || 0;
+1- Sprawdza lewą stronę, dokonując konwersji wartości (wyrażenia) na typ boolean. Jeśli jest true to NIE SPRAWDZA już drugiej strony i zwraca wartość, którą sprawdzał (tak byłoby w przykładzie 1 || 0). Warunek na tym etapie jest już prawdziwy. Jeśli jest false, to przechodzi do sprawdzenie argumentu z prawej strony np. "" || 0;
 
 2 - Po przejściu do prawej strony sprawdza ją (konwertuje na typ boolean jeśli nie jest) i zwraca ją niezależnie jaka będzie. Całe wyrażeniej jest prawdziwe jeśli choć jedna strona jest true (mogą być też obie)
 
