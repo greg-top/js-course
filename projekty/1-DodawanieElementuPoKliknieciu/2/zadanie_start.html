@@ -14,17 +14,37 @@
     .big {
       font-size: 30px
     }
-
   </style>
 </head>
 
 <body>
-  <button>Dodaj element do listy</button>
-  <ul>
+  <button class="add-list-element">Dodaj element do listy</button>
+  <ul class="dynamic-list">
 
   </ul>
 
 </body>
+
+<script>
+  const button = document.querySelector(".add-list-element");
+  const list = document.querySelector(".dynamic-list");
+
+  let i = 1;
+
+  const addListElement = function () {
+    // console.log('element listy dodany');
+    const newLi = document.createElement("li");
+    newLi.textContent = i;
+    if (i % 3 == 0) {
+      newLi.classList.add("big");
+    }
+    list.appendChild(newLi);
+    i += 2;
+  }
+
+
+  button.addEventListener("click", addListElement);
+</script>
 
 </html>
 
