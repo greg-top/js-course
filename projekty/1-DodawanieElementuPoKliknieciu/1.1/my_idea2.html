@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projekt 1.1</title>
+    <style>
+        button {
+            background-color: #000;
+            border-color: #000;
+            border-radius: 5%;
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            font-weight: 600;
+            padding: 10px 30px;
+            transition: all .3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .rect,
+        .circle {
+            border: 1px solid #000;
+            display: inline-block;
+            text-align: center;
+            margin: 10px 5px;
+            padding: 5px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .rect {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .circle {
+            background-color: #fff;
+            border-radius: 50%;
+            color: #000;
+        }
+
+        .red {
+            background-color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    1. stworzyć plik index.html i strukturę dokumentu
+    2. stworzyć przycisk w html
+    3. ostylować przycisk i kwadraty, które będę tworzone
+    JAVASCRIPT
+    1. pobrać przycisk i podpiąć do niego nasłuchiwanie na click
+    2. zadeklarować funkcję
+    3. w funkcji stworzyć element html (div)
+    4. dodać div do strony
+    5. stworzyć licznik i uzupełnić zawartość elementu div o wartość licznika
+    6. za pomocą instrukcji warunkowej stwierdzić czy dany element jest 5, jeśli tak nadać mu inną klasę 
+    -->
+    <button>Click</button>
+    <!-- <div class="rect">1</div>
+    <div class="circle">1</div>
+    <div class="circle red">1</div> -->
+
+    <script>
+        const btn = document.querySelector('button');
+        let i = 1;
+
+        btn.addEventListener("click", function () {
+            // console.log('test');
+            const element = document.createElement("div");
+            element.textContent = i;
+            console.log(`i = ${i}`);
+            if (i % 5) {
+                element.classList.add('rect');
+                console.log(`i%5=${i%5}`);
+                console.log('Dodano klase rect');
+            } else {
+                element.classList.add('circle');
+                console.log(`i%5=0 (${i%5})`);
+                console.log('dodano klase circle');
+            }
+            if (i % 10 == 0) {
+                element.classList.add('red');
+                console.log(`i%10=${i%10}`);
+                console.log('dodano klase red')
+            }
+            console.log('===================');
+            document.body.appendChild(element);
+            i++;
+        });
+    </script>
+</body>
+
+</html>
