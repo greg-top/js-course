@@ -28,10 +28,9 @@ const createLiElements = () => {
     for (let i = 1; i <= 10; i++) {
         const liElement = document.createElement('li');
         liElement.textContent = orderElement;
-        liElement.style.fontSize = `${size}px`;
+        liElement.style.fontSize = `${size++}px`;
         list.appendChild(liElement);
         orderElement++;
-        size++;
     }
 }
 
@@ -39,10 +38,7 @@ const resetLiElements = () => {
     console.log('reset click');
     size = 10;
     orderElement = 1;
-    liElement = document.querySelectorAll('li');
-    liArray = [...liElement];
-    liArray.forEach(function (el) {
-        el.parentNode.removeChild(el);
-    });
+    ulElement = document.querySelector('ul');
+    ulElement.textContent = '';
 }
 init();
