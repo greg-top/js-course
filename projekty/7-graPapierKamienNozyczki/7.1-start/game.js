@@ -16,8 +16,8 @@ const game = {
 // funkcje gry
 // 1 funkcja
 function handSelection() {
-    console.log(this); //odwołanie do klikniętego elementu. Słowo this nie działa poprawnie dla funkcji strzałkowej. Funkcja strzałkowa nie posiada własnej metody this, zostanie pobrana ona z obiektu window. W przypadku użycia funkcji strzałkowej można użyć metody target eventu (e.target) aby pobrać kliknięty element
-    console.log(this.dataset.option); //pobranie niestandardowego atrybuty z elementu HTML
+    //console.log(this); //odwołanie do klikniętego elementu. Słowo this nie działa poprawnie dla funkcji strzałkowej. Funkcja strzałkowa nie posiada własnej metody this, zostanie pobrana ona z obiektu window. W przypadku użycia funkcji strzałkowej można użyć metody target eventu (e.target) aby pobrać kliknięty element
+    //console.log(this.dataset.option); //pobranie niestandardowego atrybuty z elementu HTML
     game.playerHand = this.dataset.option;
     hands.forEach(hand => hand.style.boxShadow = '') //czyszczenie obramówka dla wszystkich elementów
     this.style.boxShadow = ' 0 0 0 4px red'; //nadanie obramowania klikniętemu elementowi
@@ -28,10 +28,33 @@ function aiChoice() {
     return hands[Math.floor(Math.random() * hands.length)].dataset.option; //wylosowanie ręki dla komputera
 }
 
+//3 funkcja - sprawdzenie wyniku
+function checkResult(player, ai) {
+    console.log(`player: ${player}`);
+    console.log(`ai: ${ai}`);
+
+    if (player === ai) {
+        //console.log('remis');
+        return 'draw';
+    } else if ((player === 'papier' && ai === 'kamień') || (player === 'kamień' && ai === 'nożyczki') || (player === 'nożyczki') && ai === 'papier') {
+        //console.log('wygrałeś');
+        return 'win';
+    } else {
+        //console.log('przegrałeś');
+        return 'loss';
+    }
+    //console.log('=====================');
+
+}
+
 //ostatnia funkcja - sterująca grą
 function startGame() {
     if (!game.playerHand) return alert('wybierz dłoń'); //wywołanie alertu i zakończenie funkcji
+
     game.aiHand = aiChoice();
+    const gameResult = checkResult(game.playerHand, game.aiHand);
+    console.log(gameResult);
+
 
     hands.forEach(hand => hand.style.boxShadow = '') //czyszczenie obramówka dla wszystkich elementów
 }
