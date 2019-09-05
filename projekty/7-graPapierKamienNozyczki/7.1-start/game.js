@@ -1,7 +1,6 @@
 // Zobacz gotowy projekt: https://websamuraj.pl/examples/js/projekt7/
-
 // stworzenie poczætkowych obiektów do przechowywania danych o stanie gry
-const gameSumarry = {
+const gameSummary = {
     numbers: 0,
     wins: 0,
     losses: 0,
@@ -10,7 +9,8 @@ const gameSumarry = {
 
 const game = {
     playerHand: null,
-    aiHand: null
+    aiHand: null,
+    result: null
 }
 
 // funkcje gry
@@ -30,8 +30,8 @@ function aiChoice() {
 
 //3 funkcja - sprawdzenie wyniku
 function checkResult(player, ai) {
-    console.log(`player: ${player}`);
-    console.log(`ai: ${ai}`);
+    //console.log(`player: ${player}`);
+    //console.log(`ai: ${ai}`);
 
     if (player === ai) {
         //console.log('remis');
@@ -44,19 +44,57 @@ function checkResult(player, ai) {
         return 'loss';
     }
     //console.log('=====================');
+}
 
+// 4 funkcja - pubblikacja wyniku
+function publishResult(player, ai, result) {
+    //wyniki gry - lewy panel
+    document.querySelector('[data-summary="your-choice"]').textContent = player; //pobranie elementu za pomocą atrybutu
+    document.querySelector('[data-summary="ai-choice"]').textContent = ai;
+    switch (result) {
+        case 'draw':
+            ++gameSummary.draws;
+            document.querySelector('[data-summary="who-win"]').textContent = 'Remis';
+            document.querySelector('[data-summary="who-win"]').classList.remove('win');
+            document.querySelector('[data-summary="who-win"]').classList.remove('loss');
+            document.querySelector('[data-summary="who-win"]').classList.add('draw');
+            break;
+        case 'win':
+            ++gameSummary.wins;
+            document.querySelector('[data-summary="who-win"]').textContent = 'Użytkownik';
+            document.querySelector('[data-summary="who-win"]').classList.remove('draw');
+            document.querySelector('[data-summary="who-win"]').classList.remove('loss');
+            document.querySelector('[data-summary="who-win"]').classList.add('win');
+            break;
+        case 'loss':
+            ++gameSummary.losses;
+            document.querySelector('[data-summary="who-win"]').textContent = 'Komputer';
+            document.querySelector('[data-summary="who-win"]').classList.remove('win');
+            document.querySelector('[data-summary="who-win"]').classList.remove('draw');
+            document.querySelector('[data-summary="who-win"]').classList.add('loss');
+    }
+    //aktualne wyniki - prawy panel
+    document.querySelector('.numbers span').textContent = ++gameSummary.numbers;
+    document.querySelector('.wins span').textContent = gameSummary.wins;
+    document.querySelector('.losses span').textContent = gameSummary.losses;
+    document.querySelector('.draws span').textContent = gameSummary.draws;
+}
+
+//5 - funkcja czyszcząca wybór użytkownika
+function finishRound() {
+    game.playerHand = null;
+    game.aiHand = null;
+    hands.forEach(hand => hand.style.boxShadow = ''); //czyszczenie obramówka dla wszystkich elementów
 }
 
 //ostatnia funkcja - sterująca grą
 function startGame() {
     if (!game.playerHand) return alert('wybierz dłoń'); //wywołanie alertu i zakończenie funkcji
-
     game.aiHand = aiChoice();
-    const gameResult = checkResult(game.playerHand, game.aiHand);
-    console.log(gameResult);
-
-
-    hands.forEach(hand => hand.style.boxShadow = '') //czyszczenie obramówka dla wszystkich elementów
+    game.result = checkResult(game.playerHand, game.aiHand);
+    //console.log(game.result);
+    publishResult(game.playerHand, game.aiHand, game.result); //tą funkcję chcemy tylko wywołać
+    finishRound();
 }
 
 
