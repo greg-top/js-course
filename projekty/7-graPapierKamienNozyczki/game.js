@@ -14,7 +14,7 @@ const game = {
 }
 
 // funkcje gry
-// 1 funkcja
+// 1 funkcja - wybór gracza
 function handSelection() {
     //console.log(this); //odwołanie do klikniętego elementu. Słowo this nie działa poprawnie dla funkcji strzałkowej. Funkcja strzałkowa nie posiada własnej metody this, zostanie pobrana ona z obiektu window. W przypadku użycia funkcji strzałkowej można użyć metody target eventu (e.target) aby pobrać kliknięty element
     //console.log(this.dataset.option); //pobranie niestandardowego atrybuty z elementu HTML
