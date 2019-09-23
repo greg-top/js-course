@@ -26,6 +26,7 @@ const addLetter = () => {
     if (activeLetter === txt[activeText].length) {
         activeText++;
         if (activeText === txt.length) return; //zatrzymanie działania funkcji addLetter gdy tablica txt nie posiada więcej indeksów do wyświetlenia
+
         return setTimeout(() => { //zatrzymanie działania funkcji addLetter na 2s
             activeLetter = 0;
             spnText.textContent = '';
