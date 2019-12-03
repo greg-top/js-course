@@ -39,18 +39,27 @@ const changeSlide = () => {
     }
     slideImg.src = slideList[activeSlide].img;
     slideText.textContent = slideList[activeSlide].text;
+    // zmiana aktywnej kropki
     changeDot();
 }
 
 const changeDot = () => {
+    // ======1 SPOSÓB=======
     //reset active slide dot
     // console.log(slideDots);
-    slideDots.forEach((dot) => {
-        if (dot.classList.contains('active')) {
-            dot.classList.remove('active');
-        }
-    })
-    document.querySelector(slideList[activeSlide].positionId).classList.add('active');
+    // slideDots.forEach((dot) => {
+    //     if (dot.classList.contains('active')) {
+    //         dot.classList.remove('active');
+    //     }
+    // })
+    // document.querySelector(slideList[activeSlide].positionId).classList.add('active');
+
+    // ======2 SPOSÓB=======
+    //metoda findIndex sprawdza warunek i zwraca index elementu z tablicy gdy warunek jest spełniony
+    const activeDot = slideDots.findIndex(dot => dot.classList.contains('active'));
+    slideDots[activeDot].classList.remove('active');
+    slideDots[activeSlide].classList.add('active');
 }
 
+// uruchomienie slajdera
 setInterval(changeSlide, time);
