@@ -91,3 +91,29 @@ Array.prototype.removeElement = function (index) {
 }
 
 //arr.removeElement(1); // wszystkie instancje obiektu tablicy mają teraz dostęp do nowej metody
+
+// ŁAŃCUCH PROTOTYPÓW (PROTOTYPE CHAIN)
+
+// arr.__proto__    // odwołuje się do prototypu konstruktora
+
+// arr.__proto__.__proto__  //odwołujemy się do prototypu kontruktora Object (w tym przypadku)
+
+// arr.__proto__.__proto__.__proto__    // null; nie ma prototypu konstrukotra powyżej obiektu głównego Object
+
+
+//KILKA ISTOTNYCH ELEMENTÓW
+
+// instanceof  - sprawdzenie czy obiekt jest instancja danego konstruktora
+
+arr instanceof Array; //true
+arr instanceof Object; //true
+arr instanceof String; //false
+
+//Object.getPrototypeOf - zwraca prototyp konstrukotra na podstawie którego ostała utworzona instancja obiektu
+
+Object.getPrototypeOf(arr); //zwraca prototyp konstrukotra Array
+
+// instancja obiektu łączy się z konstruktorem za pomocą prototypu
+
+// arr -- prototype -- Array
+// arr.constructor  // metoda constructor jest zagnieżdzona w prototypie i jest 
