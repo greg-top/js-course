@@ -1,3 +1,5 @@
+//w grze będziemy musieli stworzyć tylko 1 instancje klasy na cała grę
+
 class Statistics {
     constructor() {
         this.gameResults = [];
