@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gra Papier kamień i nożyce</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <style>
+        .row {
+            margin: 40px 10px;
+            text-align: center;
+        }
+
+        #start {
+            padding: 10px 50px;
+        }
+
+        .player-result,
+        .computer-result {
+            font-size: 48px;
+        }
+
+        .game-statistics {
+            font-size: 24px;
+        }
+
+        .game-result {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Gra Papier, Nożyce i Kamień</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <h2><strong>Player</strong></h2>
+            </div>
+            <div class="col-md-2">
+                <h2>vs</h2>
+            </div>
+            <div class="col-md-5">
+                <h2><strong>Computer</strong></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <i class="fa player-result" aria-hidden="true"></i>
+            </div>
+            <div class="col-md-2">
+                <h3 class="game-result alert">WIN/LOOSE</span>
+            </div>
+            <div class="col-md-5">
+                <i class="fa computer-result" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button id="start" class="btn btn-lg btn-success">Play</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="game-statistics">
+                    Games: <span class="games badge"></span> |
+                    Wins: <span class="wins badge"></span> |
+                    Looses: <span class="looses badge"></span> |
+                    Draws: <span class="draws badge"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Statistics.js"></script>
+    <script src="Round.js"></script>
+    <script src="Result.js"></script>
+    <script src="Game.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

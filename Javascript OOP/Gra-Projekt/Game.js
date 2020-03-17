@@ -19,7 +19,7 @@ class Game {
         this.spanWins = document.querySelector('.score span.win'); //ilość zwycięstw
         this.spanLosses = document.querySelector('.score span.loss'); //ilość porażek
 
-        //renderowanie gry
+        //renderowanie gry (default)
         this.render();
     }
 
